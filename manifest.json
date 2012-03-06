@@ -1,0 +1,21 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "images/wiznote24.png",
+      "default_title": "__MSG_actionName__",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "js": [ "script/lib/jquery.min.js", "script/lib/md5.js","script/lib/xmlrpc.js", "script/lib/jquery.miniTip.min.js",  "script/clip.js", "script/login.js" , "script/background.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   }],
+   "default_locale": "en",
+   "description": "This extension adds an save button to the toolbar which allows you to save the page to Wiz.",
+   "icons": {
+      "128": "images/wiznote128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDUXgWb0t1zf1GnNvi5QunMBFuFtN5LD3S5m6JcXalE9EtMecSb3Zd8jQX1VnS3V+8rbDAKAe2VinmQG4NSe4540FYmaRVA4KajpXZr01BremNLkZEVkQ+LC50Yo6we7MenAilCU4ec9oYfJ+J22hy99+GCzaxpKUhlcRJkPzWYrQIDAQAB",
+   "name": "__MSG_extName__",
+   "permissions": [ "contextMenus", "tabs", "http://*/*", "https://*/*" ],
+   "version": "1.0.0.3"
+}

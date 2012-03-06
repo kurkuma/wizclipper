@@ -1,0 +1,28 @@
+#popup #wiz_clip_detail {
+	padding: 0 ;
+	height: 400px;
+	width: 440px;
+}
+
+#wiz_note_iframe {
+	height:360px;
+	width:430px;
+	background-color:white;
+}
+
+#wiz_note_detail li{
+	list-style-type:none;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 10px;
+	-webkit-margin-start: -35px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+#wiz_note_title{
+	width: 354px;
+}
+#note_submit_message {
+	font-family:ËÎÌו, Helvetica, Arial, sans-serif;
+	font-size: 9pt;
+}
