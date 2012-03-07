@@ -1,8 +1,4 @@
-<!-- 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
- -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 	<head>
 	    <link rel="stylesheet" type="text/css" href="css/clip_content.css" />
@@ -32,66 +28,39 @@
 	</head>
 
 	<body class="popup" id="popup">
-	<div class="wiz_login" id="wiz_login">
+        <div id="loginView" class="view">
 		<div class="header_logo"></div>
-		<div id="container">
-			<div class="account_login_div">
-				<input type="hidden" value="login" name="m">
-				<input type="hidden" name="ui" value="">
-				<table cellpadding="3">
-					<tr>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<div id="div_error_validator" style="color:red"></div>
-						</td>
-					</tr>
-				</table>
-				<table border="0" cellspacing="2" cellpadding="2">
-					<tbody>
-						<tr>
-							<td width="20%" nowrap="nowrap" valign="top">
-							<font>Username:</font><br>
-							</td>
-							<td>
-								<input type="text" name="user_id" size="30" value="" style="width:13em" id="user_id">
-								<font class="required_error_font">&nbsp;&nbsp; </font> 
-							</td>
-						</tr>
-						<tr>
-							<td width="20%" nowrap="nowrap" valign="top">
-								<font>Password:</font> 
-							</td>
-							<td>
-								<input type="password" name="password" size="30" value="" style="width:13em" id="password">
-								<font class="required_error_font">&nbsp;&nbsp; </font> 
-							</td>
-						</tr>
-						<tr>
-							<td width="20%" nowrap="nowrap" valign="top">
-								<font>&nbsp; </font> 
-							</td>
-							<td>
-								<input type="checkbox" name="keep_password" id="keep_passoword">
-								<font color="#6f6f6f">Save Password</font>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<table>
-					<tr>
-						<td>&nbsp;</td>
-						<td nowrap="nowrap" align="left" style="padding-top: 3px;">
-							<input type="button" name="submitBtn" value="submit" onclick=WIZPlugin.doLogin() style="font-weight:bold; margin-bottom:3px;">
-							<div style="vertical-align: baseline; height:24px; padding-top:1px; display:inline;" >
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</div>
+        <h2 message="loginToEvernote"></h2>
+        <form name="loginForm" action="#">
+		<input type="hidden" value="login" name="m">
+		<input type="hidden" name="ui" value="">
+        <table class="formTable">
+        <tr>
+          <td><label for="username" message="loginForm_username"></label></td> 
+          <td><input type="text" name="username" maxlength="64" style="text-transform: lowercase" tabindex="1"/> </td>
+        </tr>
+        <tr>
+          <td><label for="password" message="loginForm_password"></label></td> 
+          <td><input type="password" name="password" maxlength="64" tabindex="2"/> </td>
+        </tr>
+        <tr>
+          <td style="min-width: 100px;">&nbsp;</td>
+          <td>
+            <input type="checkbox" name="rememberMe" tabindex="4"/><label for="rememberMe" message="loginForm_rememberMe"></label>
+            <div id="login_storedCredentialsShortDescription" class="loginDescription friendlyWarning" style="padding-left: 21px;">
+              <span message="options_storedCredentialsShortDescription"></span>
+            </div>
+            <div id="login_storedCredentialsDescription" class="loginDescription friendlyWarning" style="padding-left: 21px; display: none;" message="options_storedCredentialsDescription"></div>
+          </td>
+        </tr>
+        <tr class="actionControlRow">
+          <td>&nbsp;</td>
+          <td><input type="submit" name="login" onclick=WIZPlugin.doLogin() message="loginForm_login" style="margin-bottom: 8px;" tabindex="5"/></td>
+        </tr>
+        </table>
+        </form>
+        </div>
+
 
 	<div class="wiz_clip_detail" id="wiz_clip_detail" style="display:none">
 		<div id="wiz_clip_select">
@@ -113,7 +82,6 @@
 			document.getElementById("wiz_note_iframe").contentDocument.designMode = "on";
 	</script>
 	</div>
-	
 		
 	</body>
 </html>
