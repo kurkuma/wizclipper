@@ -16,6 +16,6 @@
    },
    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDUXgWb0t1zf1GnNvi5QunMBFuFtN5LD3S5m6JcXalE9EtMecSb3Zd8jQX1VnS3V+8rbDAKAe2VinmQG4NSe4540FYmaRVA4KajpXZr01BremNLkZEVkQ+LC50Yo6we7MenAilCU4ec9oYfJ+J22hy99+GCzaxpKUhlcRJkPzWYrQIDAQAB",
    "name": "__MSG_extName__",
-   "permissions": [ "contextMenus", "tabs", "http://*/*", "https://*/*" ],
+   "permissions": [ "unlimitedStorage", "contextMenus", "tabs", "notifications", "http://*/*", "https://*/*" ],
    "version": "1.0.0.3"
 }
