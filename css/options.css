@@ -1,0 +1,90 @@
+body {
+    color:dimGray;
+    font-size:12px;
+    font-family:arial,helvetica,sans-serif;
+    line-height:1.5;
+}
+
+body.options {
+    background:#f2f5f6;
+    width:auto!important;
+}
+
+.vignette {
+    margin:40px auto 20px auto;
+    padding:0;
+    border-width:12px 20px 20px 12px;
+    -webkit-border-image:url(../images/vignette.png) 12 20 20 12 stretch stretch;
+}
+
+.vignetteContent {
+    background:white;
+    padding:18px;
+}
+
+#optionsView {
+    width:600px;
+}
+
+table.simpleOptions {
+    margin:0;
+    padding:0;
+    border-bottom:1px solid #EDF6F7
+    margin-bottom:16px;
+    width:100%;
+    table-layout:fixed;
+}
+
+body.options h2 {
+    display:block;
+    text-align:center;
+    margin:4px 0;
+    font-size:16pt;
+    font-weight:bold;
+    color:#333;
+}
+
+#submitMessage {
+    padding:2px;
+    font-weight:bold;
+}
+
+#submitMessage.success {
+    background:yellow;
+    color:black;
+}
+
+#submitMessage.error {
+    background:red;
+    color:white;
+}
+
+#optionsHeader {
+    text-align:center;
+}
+
+.copyright {
+    text-align:center;
+    padding-bottom:20px;
+}
+
+select {
+    max-width:300px;
+}
+
+label {
+    padding-right:10px;
+}
+
+.radioGroup label {
+    padding-left:4px;
+    padding-right:4px;
+}
+
+input[type=submit],button {
+    color:black;
+}
+
+input[disabled],button[disabled] {
+    color:#696969;
+}

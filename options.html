@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="css/options.css" />
+    <!-- <script type="text/javascript" src="script/lib/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Wiz.Utils.localizeBlock($("body"));
+      });
+    </script> -->
+  </head>
+  <body class="options">
+    <div id="optionsView" class="vignette">
+    <div class="vignetteContent">
+      <div id="optionsHeader">
+        <img src="images/logo.png"/>
+      </div>
+      <form name="optionsForm" class="optionsForm" action="#">
+        <div id="optionsContainer">
+        <h2 message="options_title"></h2>
+        <table class="simpleOptions">
+          <tr id="noteSortOrderContainer">
+            <td>
+              <label for="noteSortOrder" message="options_noteSortOrder"></label>
+            </td>
+            <td>
+              <select name="noteSortOrder">
+                <option value='{"order":1,"ascending":false}' message="noteSortOrder_createdDescending"></option>
+                <option value='{"order":1,"ascending":true}' message="noteSortOrder_createdAscending"></option>
+                <option value='{"order":2,"ascending":false}' message="noteSortOrder_updatedDescending"></option>
+                <option value='{"order":2,"ascending":true}' message="noteSortOrder_updatedAscending"></option>
+              </select>
+            </td>
+          </tr>
+
+          <tr id="clipStyleContainer">
+            <td>
+              <label for="clipStyle" message="options_clipStyle"></label>
+            </td>
+            <td>
+              <div class="radioGroup">
+                <input type="radio" name="clipStyle" value="0" id="clipStyle0"/><label for="clipStyle0" message="options_clipStyle_none"></label><br/>
+                <input type="radio" name="clipStyle" value="1" id="clipStyle1"/><label for="clipStyle1" message="options_clipStyle_text"></label><br/>
+                <input type="radio" name="clipStyle" value="2" id="clipStyle2"/><label for="clipStyle2" message="options_clipStyle_full"></label>
+              </div>
+            </td>
+          </tr>
+
+          <tr id="clipActionContainer">
+            <td>
+              <label for="clipAction" message="options_clipAction"></label>
+            </td>
+            <td>
+              <select name="clipAction">
+                <option value="0" message="options_clipAction_article"></option>
+                <option value="1" message="options_clipAction_fullPage"></option>
+                <option value="2" message="options_clipAction_url"></option>
+              </select>
+            </td>
+          </tr>
+
+          <tr id="notificationsContainer">
+            <td>
+              <label for="clipNotificationEnabled" message="options_clipNotificationEnabled"></label>
+            </td>
+            <td>
+              <input type="checkbox" id="clipNotificationEnabled" name="clipNotificationEnabled"/>
+              <div class='optionsDescription' message="options_clipNotificationEnabledDescription"></div>
+            </td>
+          </tr>
+
+          <tr id="contextMenuContainer">
+            <td>
+              <label for="useContextMenu" message="options_useContextMenu"></label>
+            </td>
+            <td>
+              <input type="checkbox" id="useContextMenu" name="useContextMenu"/>
+              <div class='optionsDescription' message="options_useContextMenuDescription"></div>
+            </td>
+          </tr>
+
+          <tr id="searchHelperContainer">
+            <td>
+              <label for="useSearchHelper" message="options_useSearchHelper"></label>
+            </td>
+            <td>
+              <input type="checkbox" id="useSearchHelper" name="useSearchHelper"/>
+              <div class='optionsDescription' message="options_useSearchHelperDescription"></div>
+            </td>
+          </tr>
+
+        </table>
+        </div>
+
+        <input type="submit" message="options_submit"/>&nbsp;
+        <input type="button" message="options_reset" value="reset" onclick="options.resetOptionsForm(); return false;"/>&nbsp;
+        <span id="submitMessage"></span>
+      </form>
+    </div> <!-- /vignetteContent -->
+    </div> <!-- /vignette -->
+    <div class="copyright" message="copyright"></div>
+  </body>
+</html>
