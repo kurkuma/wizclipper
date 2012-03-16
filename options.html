@@ -7,8 +7,26 @@
     <script type="text/javascript" src="script/wizChromeExtension.js"></script>
 
     <script type="text/javascript">
+        function _get(name) {
+            return localStorage[name];
+        }
+
+        function _set(name, value) {
+            localStorage[name] = value;
+        }
+
+        function saveOptions() {
+            _set("selectClipper", $("#noteSelectClipper option:selected").attr("value"));
+        }
+
+        function loadOptions() {
+            $("#noteSelectClipper")[0].selectedIndex = _get("selectClipper", $("#noteSelectClipper option:selected").attr("value"));
+        }
+
         $(document).ready(function() {
+            $("#options_submit").click(saveOptions);
             localizeBlock($("body"));
+            loadOptions();
         });
     </script>
   </head>
@@ -24,12 +42,12 @@
         <table class="simpleOptions">
           <tr id="noteSelectClipperContainer">
             <td>
-              <label for="noteSelectClipper" message="options_noteSelectClipper"></label>
+              <label message="options_noteSelectClipper"></label>
             </td>
-            <td>
-              <select name="noteSelectClipper">
-                <option value='{"order":1,"ascending":false}' message="options_noteSelectClipper_Client"></option>
-                <option value='{"order":1,"ascending":true}' message="options_noteSelectClipper_Extension"></option>
+            <td >
+                <select id="noteSelectClipper">
+                <option value="0" message="options_noteSelectClipper_Client"></option>
+                <option value="1" message="options_noteSelectClipper_Extension"></option>
               </select>
             </td>
           </tr>
@@ -93,8 +111,8 @@
         </table>
         </div>
 
-        <button message="options_submit"/>&nbsp;
-        <button message="options_reset" onclick="options.resetOptionsForm(); return false;"/>&nbsp;
+        <input type=button id="options_submit" message="options_submit"/>
+        <input type=button id="options_reset" message="options_reset"/>
         <span id="submitMessage"></span>
       </form>
     </div> <!-- /vignetteContent -->

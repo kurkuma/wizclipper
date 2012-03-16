@@ -26,7 +26,7 @@ function localizeElement(element, force) {
         } else {
             var msg = chrome.i18n.getMessage(field);
         }
-        if (element.attr("tagName") == "INPUT") {
+        if (element.attr("type") == "button") {
             element.attr("value", msg);
         } else {
             element.html(msg);
