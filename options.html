@@ -2,13 +2,101 @@
 <html>
   <head>
 	<link rel="stylesheet" type="text/css" href="css/options.css" />
-    <!-- <script type="text/javascript" src="script/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="script/lib/jquery-1.7.1.min.js"></script>
 
     <script type="text/javascript">
-      $(document).ready(function() {
-        Wiz.Utils.localizeBlock($("body"));
-      });
-    </script> -->
+        function localizeBlock(block) {
+            if (block.attr("message"))
+                localizeElement(block);
+            var siblings = block.find("[message], [placeholder], [title]");
+            for ( var i = 0; i < siblings.length; i++) {
+                var sibling = $(siblings.get(i));
+                localizeElement(sibling);
+            }
+        }
+
+        function localizeElement(element, force) {
+            if (!force && element.attr("localized")
+                && element.attr("localized") == "true") {
+                    return;
+            }
+
+            var field = extractLocalizationField(element);
+            var placeholderField = extractLocalizationPlaceholderField(element);
+            var titleField = extractLocalizationTitleField(element);
+            var fieldData = extractLocalizationDataField(element);
+            var localized = false;
+
+            if (field) {
+                if (fieldData) {
+                    var msg = chrome.i18n.getMessage(field, fieldData);
+                } else {
+                    var msg = chrome.i18n.getMessage(field);
+                }
+                if (element.attr("tagName") == "INPUT") {
+                    element.attr("value", msg);
+                } else {
+                    element.html(msg);
+                }
+                localized = true;
+            }
+
+            if (placeholderField) {
+                var msg = chrome.i18n.getMessage(placeholderField);
+                element.attr("placeholder", msg);
+                localized = true;
+            }
+
+            if (titleField) {
+                var msg = chrome.i18n.getMessage(titleField);
+                element.attr("title", msg);
+                localized = true;
+            }
+
+            if (localized) {
+                element.attr("localized", "true");
+            }
+        }
+
+        function extractLocalizationField(element) {
+            if (typeof element.attr == 'function' && element.attr("message"))
+                return element.attr("message");
+            else
+                return null;
+        }
+
+        function extractLocalizationPlaceholderField(element) {
+            if (typeof element.attr == 'function' && element.attr("placeholder"))
+                return element.attr("placeholder");
+            else
+                return null;
+        }
+
+        function extractLocalizationTitleField(element) {
+            if (typeof element.attr == 'function' && element.attr("title"))
+                return element.attr("title");
+            else
+                return null;
+        }
+
+        function extractLocalizationDataField(element) {
+            if (typeof element.attr == 'function' && element.attr("messagedata")) {
+                var v = element.attr("messagedata");
+                try {
+                    v = eval(v);
+                } catch (e) {}
+                if (!(v instanceof Array))
+                    v = [ v ];
+                    return v;
+                } else {
+                    return null;
+            }
+        }
+
+        $(document).ready(function() {
+            localizeBlock($("body"));
+        });
+    </script>
   </head>
   <body class="options">
     <div id="optionsView" class="vignette">
@@ -20,16 +108,14 @@
         <div id="optionsContainer">
         <h2 message="options_title"></h2>
         <table class="simpleOptions">
-          <tr id="noteSortOrderContainer">
+          <tr id="noteSelectClipperContainer">
             <td>
-              <label for="noteSortOrder" message="options_noteSortOrder"></label>
+              <label for="noteSelectClipper" message="options_noteSelectClipper"></label>
             </td>
             <td>
-              <select name="noteSortOrder">
-                <option value='{"order":1,"ascending":false}' message="noteSortOrder_createdDescending"></option>
-                <option value='{"order":1,"ascending":true}' message="noteSortOrder_createdAscending"></option>
-                <option value='{"order":2,"ascending":false}' message="noteSortOrder_updatedDescending"></option>
-                <option value='{"order":2,"ascending":true}' message="noteSortOrder_updatedAscending"></option>
+              <select name="noteSelectClipper">
+                <option value='{"order":1,"ascending":false}' message="options_noteSelectClipper_Client"></option>
+                <option value='{"order":1,"ascending":true}' message="options_noteSelectClipper_Extension"></option>
               </select>
             </td>
           </tr>
@@ -93,8 +179,8 @@
         </table>
         </div>
 
-        <input type="submit" message="options_submit"/>&nbsp;
-        <input type="button" message="options_reset" value="reset" onclick="options.resetOptionsForm(); return false;"/>&nbsp;
+        <button message="options_submit"/>&nbsp;
+        <button message="options_reset" onclick="options.resetOptionsForm(); return false;"/>&nbsp;
         <span id="submitMessage"></span>
       </form>
     </div> <!-- /vignetteContent -->

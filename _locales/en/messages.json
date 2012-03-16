@@ -4,5 +4,9 @@
    },
    "extName": {
       "message": "Save to Wiz"
+   },
+   "options_title": {
+      "description": "Title of the options page",
+      "message": "Options"
    }
 }

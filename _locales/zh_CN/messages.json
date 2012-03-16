@@ -4,5 +4,86 @@
    },
    "extName": {
       "message": "\u4FDD\u5B58\u5230 Wiz"
+   },
+
+   "options_title": {
+      "description": "Title of the options page",
+      "message": "\u9009\u9879"
+   },
+   "options_noteSelectClipper": {
+      "description": "Label for chose clip method",
+      "message": "\u526a\u8f91\u65b9\u5f0f"
+   },
+   "options_noteSelectClipper_Client": {
+      "description": "Options for clipping by client",
+      "message": "\u4f7f\u7528\u5ba2\u6237\u7aef\uff0c\u672c\u5730\u4fdd\u5b58"
+   },
+   "options_noteSelectClipper_Extension": {
+      "description": "Options for clipping by extension",
+      "message": "\u4f7f\u7528\u6269\u5c55\uff0c\u76f4\u63a5\u4e0a\u4f20"
+   },
+   "options_clipStyle": {
+      "description": "Label for various options regarding preservation of element styles of clipped content",
+      "message": "\u526A\u8F91\u6837\u5F0F"
+   },
+   "options_clipStyle_full": {
+      "description": "Option for preserving all of the element styles of clipped content",
+      "message": "\u4FDD\u6301\u6240\u6709\u6837\u5F0F"
+   },
+   "options_clipStyle_none": {
+      "description": "Options for ignoring element styles of clipped content",
+      "message": "\u666E\u901A\uFF0C\u65E0\u4EFB\u4F55\u6837\u5F0F"
+   },
+   "options_clipStyle_text": {
+      "description": "Option for preserving styles only for the clipped text",
+      "message": "\u4EC5\u4FDD\u6301\u6587\u672C\u6837\u5F0F"
+   },
+   "options_clipAction": {
+      "description": "Label for specifying default clipping action",
+      "message": "\u9ED8\u8BA4\u64CD\u4F5C"
+   },
+   "options_clipAction_article": {
+      "description": "Label for article as the default clipping action",
+      "message": "\u526A\u8F91\u6587\u7AE0"
+   },
+   "options_clipAction_fullPage": {
+      "description": "Label for full-page as the default clipping action",
+      "message": "\u526A\u8F91\u6574\u9875"
+   },
+   "options_clipAction_url": {
+      "description": "Label for url as the default clipping action",
+      "message": "\u526A\u8F91 URL"
+   },
+   "options_clipNotificationEnabled": {
+      "description": "Label for option to enable notification about successful clips",
+      "message": "\u542F\u7528\u901A\u77E5"
+   },
+   "options_clipNotificationEnabledDescription": {
+      "description": "Description of the notifications option",
+      "message": "\u542F\u7528\u65F6\uFF0C\u4E00\u65E6\u6709\u526A\u8F91\u4E0A\u4F20\uFF0C\u60A8\u5C31\u4F1A\u6536\u5230\u901A\u77E5\u3002"
+   },
+   "options_useContextMenu": {
+      "description": "Label for option to enable clipping via contextual menu",
+      "message": "\u542F\u7528\u4E0A\u4E0B\u6587\u83DC\u5355"
+   },
+   "options_useContextMenuDescription": {
+      "description": "Description of the contextual menu option",
+      "message": "\u542F\u7528\u65F6\uFF0C\u60A8\u53EF\u4EE5\u901A\u8FC7\u4E0A\u4E0B\u6587\u83DC\u5355\u526A\u8F91\u7F51\u9875\u3002\u53F3\u952E\u70B9\u51FB\u9875\u9762\u4E0A\u7684\u56FE\u50CF\u3001\u9009\u5B9A\u7684\u6587\u672C\u6216\u4EFB\u610F\u4F4D\u7F6E\u5C06\u663E\u793A\u76F8\u5E94\u7684\u526A\u8F91\u9009\u9879\u3002"
+   },
+   "options_useSearchHelper": {
+      "description": "Label for search-helper feature toggle",
+      "message": "\u4F7F\u7528\u540C\u6B65\u641C\u7D22"
+   },
+   "options_useSearchHelperDescription": {
+      "description": "Description of the search-helper feature as shown on the options page",
+      "message": "\u6240\u652f\u6301\u7684\u641c\u7d22\u5f15\u64ce\u5305\u62ec\uff1aGoogle\u3001Bing\u3001Baidu"
+   },
+   "options_submit": {
+      "description": "Label for saving options",
+      "message": "\u4fdd\u5b58"
+   },
+   "options_reset": {
+      "description": "Label for resetting options",
+      "message": "\u91cd\u7f6e"
    }
 }
