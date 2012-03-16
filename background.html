@@ -1,14 +1,10 @@
 <html>
 <head>
-    <script type="text/javascript" src="script/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="script/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="script/lib/xmlrpc.js"></script>
     <script type="text/javascript" src="script/background.js"></script>
 
     <script>
-        function wizExecuteSave(title, params) {
-            var dynamic_html = "<embed type='application/x-wizbrother-wiz-ax' width='100' height='20' " + params + "></embed>";
-            document.write(dynamic_html);
-        }
         chrome.extension.onConnect.addListener(
             function(port) 
             {
@@ -17,30 +13,30 @@
                 // This will get called by the content script we execute in
                 // the tab as a result of the user pressing the browser action.
                 port.onMessage.addListener(
-                    function(info) 
+                    function(info)
                     {
                         wizExecuteSave(info.title, info.params);
                     }
                 );
             }
         );
-        function wizSaveToWiz(tab) {
-            chrome.tabs.executeScript(null, { file: "content_script.js" });
+
+        function wizExecuteSave(title, params) {
+            var dynamic_html = "<embed type='application/x-wizbrother-wiz-ax' width='100' height='20' " + params + "></embed>";
+            document.write(dynamic_html);
+        }
+
+        function wizSaveToWiz() {
+            chrome.tabs.executeScript(null, { file: "script/client_clipper.js" });
         }
 
         // Called when the user clicks on the browser action icon.
         chrome.browserAction.onClicked.addListener(wizSaveToWiz);
 
-        // A generic onclick callback function.
-        function wizOnSaveToWizContextMenuClick(info, tab) {
-            wizSaveToWiz(tab);
-        }
-        // Create one test item for each context type.
-        var contexts = ["page", "selection", "link", "editable", "image", "video",
-                "audio"];
-
-        var menuTitle = chrome.i18n.getMessage("actionName");
-        chrome.contextMenus.create({ "title": menuTitle, "contexts": contexts, "onclick": wizOnSaveToWizContextMenuClick });
+        chrome.contextMenus.create({
+            "title": chrome.i18n.getMessage("actionName"),
+            "contexts": ["page", "selection", "link", "editable", "image", "video", "audio"],
+            "onclick": wizSaveToWiz});
 
     </script>
 
