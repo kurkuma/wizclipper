@@ -5,7 +5,9 @@
 	    <link rel="stylesheet" type="text/css" href="css/popup_login.css" />
   		<link rel="stylesheet" type="text/css" href="css/popup.css" />
 
-		<script type="text/javascript" src="script/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="script/lib/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="script/wizChromeExtension.js"></script>
+
 		<script type="text/javascript" src="script/lib/xmlrpc.js"></script>
 		<script type="text/javascript" src="script/lib/md5.js"></script>
 		<script type="text/javascript" src="script/login.js"></script>
@@ -13,6 +15,10 @@
 		<script type="text/javascript" src="script/background.js"></script>
 		
 		<script type="text/javascript">
+            $(document).ready(function() {
+                localizeBlock($("body"));
+            });
+
 			chrome.cookies.get({url:"http://service.wiz.cn/web", name: "note_auth"}, function(cookie){
 				if(!cookie){
 	            	$("#wiz_login").css("display" , "");
@@ -35,53 +41,30 @@
 		<input type="hidden" value="login" name="m">
 		<input type="hidden" name="ui" value="">
         <table class="formTable">
-        <tr>
-          <td><label for="username" message="loginForm_username"></label></td> 
-          <td><input type="text" name="user_id" maxlength="64" style="text-transform: lowercase" tabindex="1"/> </td>
-        </tr>
-        <tr>
-          <td><label for="password" message="loginForm_password"></label></td> 
-          <td><input type="password" name="password" maxlength="64" tabindex="2"/> </td>
-        </tr>
-        <tr>
-          <td style="min-width: 100px;">&nbsp;</td>
-          <td>
-            <input type="checkbox" name="rememberMe" tabindex="4"/><label for="rememberMe" message="loginForm_rememberMe"></label>
-            <div id="login_storedCredentialsShortDescription" class="loginDescription friendlyWarning" style="padding-left: 21px;">
-              <span message="options_storedCredentialsShortDescription"></span>
-            </div>
-            <div id="login_storedCredentialsDescription" class="loginDescription friendlyWarning" style="padding-left: 21px; display: none;" message="options_storedCredentialsDescription"></div>
-          </td>
-        </tr>
+            <tr>
+                <td><label for="username" message="loginForm_username"></label></td> 
+                <td><input type="text" name="user_id" maxlength="64" style="text-transform: lowercase" tabindex="1"/> </td>
+            </tr>
+            <tr>
+                <td><label for="password" message="loginForm_password"></label></td> 
+                <td><input type="password" name="password" maxlength="64" tabindex="2"/> </td>
+            </tr>
+            <tr>
+                <td style="min-width: 100px;">&nbsp;</td>
+                <td>
+                    <input type="checkbox" name="rememberMe" tabindex="4"/><label for="rememberMe" message="loginForm_rememberMe"></label>
+                    <div id="login_storedCredentialsShortDescription" class="loginDescription friendlyWarning" style="padding-left: 21px;">
+                    <span message="options_storedCredentialsShortDescription"></span>
+                    </div>
+                    <div id="login_storedCredentialsDescription" class="loginDescription friendlyWarning" style="padding-left: 21px; display: none;" message="options_storedCredentialsDescription"></div>
+                </td>
+            </tr>
         <tr class="actionControlRow">
           <td>&nbsp;</td>
-          <td><input type="submit" name="login" onclick=WIZPlugin.doLogin() message="loginForm_login" style="margin-bottom: 8px;" tabindex="5"/></td>
+          <td><button message="loginForm_login" onclick=WIZPlugin.doLogin() style="margin-bottom: 8px;" tabindex="5"/></td>
         </tr>
-        </table>
-        </form>
-        </div>
-
-
-	<div class="wiz_clip_detail" id="wiz_clip_detail" style="display:none">
-		<div id="wiz_clip_select">
-			<ul id="wiz_note_detail">
-				<li>
-					<label for="title">Title</label>
-					<input type="text" id="wiz_note_title" />
-				</li>
-				<li class="wiz_note_content">
-					<iframe id="wiz_note_iframe" ></iframe>
-				</li>
-					
-				<li class="wiz_note_btns">
-					<input type=button id="wiz_note_submit" value="Submit">&nbsp;<label id="note_submit_message" style="color:red"></label>
-				</li>
-			</ul>
-		</div>
-	<script type="text/javascript">
-			document.getElementById("wiz_note_iframe").contentDocument.designMode = "on";
-	</script>
-	</div>
-		
+    </table>
+    </form>
+    </div>
 	</body>
 </html>

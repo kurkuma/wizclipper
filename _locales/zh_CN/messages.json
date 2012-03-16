@@ -6,6 +6,23 @@
       "message": "\u4FDD\u5B58\u5230 Wiz"
    },
 
+   "loginForm_username": {
+      "description": "Label for entering username into login form",
+      "message": "\u7528\u6237\u540D"
+   },
+   "loginForm_password": {
+      "description": "Label for entering password into login form",
+      "message": "\u5BC6\u7801"
+   },
+   "loginForm_rememberMe": {
+      "description": "Label for extending login session",
+      "message": "\u8BB0\u4F4F\u6211"
+   },
+   "loginForm_login": {
+      "description": "Sign in button label for login form",
+      "message": "\u767B\u5F55"
+   },
+
    "options_title": {
       "description": "Title of the options page",
       "message": "\u9009\u9879"
