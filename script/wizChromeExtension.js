@@ -1,3 +1,19 @@
+wiz = function wiz() {};
+
+wiz.prototype.SETTING_USERNAME = "username";
+wiz.prototype.SETTING_PASSWORD = "password";
+wiz.prototype.SETTING_REMEMBERME = "rememberme";
+wiz.prototype.SETTING_CLIPPER = "selectClipper";
+
+
+function _get(name) {
+    return localStorage[name];
+}
+
+function _set(name, value) {
+    localStorage[name] = value;
+}
+
 function localizeBlock(block) {
     if (block.attr("message"))
         localizeElement(block);

@@ -7,23 +7,16 @@
     <script type="text/javascript" src="script/wizChromeExtension.js"></script>
 
     <script type="text/javascript">
-        function _get(name) {
-            return localStorage[name];
-        }
-
-        function _set(name, value) {
-            localStorage[name] = value;
-        }
-
         function saveOptions() {
-            _set("selectClipper", $("#noteSelectClipper option:selected").attr("value"));
+            _set(wiz.SETTING_CLIPPER, $("#noteSelectClipper option:selected").attr("value"));
         }
 
         function loadOptions() {
-            $("#noteSelectClipper")[0].selectedIndex = _get("selectClipper", $("#noteSelectClipper option:selected").attr("value"));
+            $("#noteSelectClipper")[0].selectedIndex = _get(wiz.SETTING_CLIPPER, $("#noteSelectClipper option:selected").attr("value"));
         }
 
         $(document).ready(function() {
+            wiz = new wiz();
             $("#options_submit").click(saveOptions);
             localizeBlock($("body"));
             loadOptions();
